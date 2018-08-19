@@ -11,20 +11,18 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/',(req,res) =>{
     // res.send('hello express')
-
-    res.send({
-    name:"masha"
-})
+    res.render("home.hbs", {
+        pageTitle:'Home page',
+        pageMessage:'Welcome to the website'
+    })
 });
-
-// app.use((req,res,next)=>{
-//
-//     res.render('maintain.hbs')
-//
-// })
 
 app.get('/about',(req,res) =>{
     res.render('about.hbs')
+});
+
+app.get('/maintain',(req,res) =>{
+    res.render('maintain.hbs')
 
 
 });
